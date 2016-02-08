@@ -6,8 +6,8 @@
     <title>Swedwise Labs</title>
     <link rel="shortcut icon" href="http://swedwise.com/wp-content/themes/swedwise/favicon.ico?v=1" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="A simple BI frontend example">
+    <meta name="author" content="henrik.blidh@swedwise.com">
 
     <!-- STYLESHEETS -->
 
@@ -43,18 +43,65 @@
         <div class="row fill">
             <div id="map">
             <div class="col-xs-12 fill">
-                <div class="col-xs-12 slide-header">
+                <div class="col-xs-12 header-section">
                     <div class="row fill">
                         <div class="col-xs-12 col-sm-9 col-md-10">
                             <h2 class="swedwise-labs-header">Swedwise Labs Example</h2>
                         </div>
                         <div class="col-sm-3 col-md-2 hidden-xs">
-                            <img src="http://swedwise.com/wp-content/themes/swedwise/images/swedwise_logo.svg" class="img-responsive" style="margin-top:20px">
+                            <img src="http://swedwise.com/wp-content/themes/swedwise/images/swedwise_logo.svg" class="img-responsive" style="margin-top:25px">
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 slide-body">
-                    <p>Test</p>
+                <div class="col-xs-12 carousel-section">
+                    <div id="the-carousel" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#the-carousel" style="background-color: #000000" data-slide-to="0" class="active"></li>
+                            <li data-target="#the-carousel" style="background-color: #000000" data-slide-to="1"></li>
+                            <li data-target="#the-carousel" style="background-color: #000000" data-slide-to="2"></li>
+                            <div id="carouselButtons">
+                                <button id="playButton" type="button" class="btn btn-default btn-xs"
+                                        style="background-color: inherit !important; background-image: none !important">
+                                    <span class="glyphicon glyphicon-play"></span>
+                                </button>
+                                <button id="pauseButton" type="button" class="btn btn-default btn-xs"
+                                        style="background-color: inherit !important; background-image: none !important">
+                                    <span class="glyphicon glyphicon-pause"></span>
+                                </button>
+                            </div>
+                        </ol>
+
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="col-xs-offset-1 col-xs-10 fill">
+                                    <div class="labs-highcharts-container" id="first-slide-id"></div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="col-xs-offset-1 col-xs-10 fill">
+                                    <div class="labs-highcharts-container" id="second-slide-id"></div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="col-xs-offset-1 col-xs-10 fill">
+                                    <div class="labs-highcharts-container" id="third-slide-id"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Left/Right buttons -->
+                        <a class="left carousel-control" href="#the-carousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#the-carousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+
+                    </div>
                 </div>
             </div>
             </div>
@@ -71,6 +118,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
             crossorigin="anonymous"></script>
+    <!-- Highcharts -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+
+    <script src="labs.js"></script>
 
 	<!-- /JAVASCRIPTS -->
 </body>

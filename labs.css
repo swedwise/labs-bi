@@ -19,8 +19,9 @@ html, body {
     height: 100%;
 }
 
-.slide-header {
+.header-section {
     height:10%;
+    border-bottom: 1px solid #ededed;
     //background-color: #20376e;
 }
 
@@ -35,6 +36,30 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
-.slide-body {
+.carousel-section {
+    height: 90%;
+    padding-top:5%;
+}
+
+.carousel, .item, .active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-control.left {
+    background-image: none;
+    color: #20376e;
+    opacity: 1.0;
+}
+.carousel-control.right {
+    background-image: none;
+    color: #20376e;
+    opacity: 1.0;
+}
+
+.labs-highcharts-container {
     height: 90%;
 }
