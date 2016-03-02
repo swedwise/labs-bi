@@ -6,70 +6,55 @@
 $( document ).ready(function() {
 
     $('#first-slide-id').highcharts({
-        chart: {
-            type: 'column'
+        "chart": {
+            "type": "column"
         },
-        title: {
-            text: 'Monthly Average Rainfall'
+        "legend": {
+            "enabled": true
         },
-        subtitle: {
-            text: 'Source: WorldClimate.com'
+        "plotOptions": {
+            "column": {
+                "borderWidth": 0,
+                "dataLabels": {
+                    "enabled": true,
+                    "style": {
+                        "fontSize": "10px",
+                        "fontWeight": "bold"
+                    }
+                },
+                "pointPadding": 0}
         },
-        xAxis: {
-            categories: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec'
-            ],
-            crosshair: true
+        "series": [
+            {"data": [24, 16, 42, 30, 10, 21, 9], "name": "Webstore", "color": "#7293cb"},
+            {"data": [21, 17, 35, 31, 21, 32, 25], "name": "Store, Stockholm", "color": "#e1974c"},
+            {"data": [6, 8, 21, 15, 10, 14, 12], "name": "Store, Göteborg", "color": "#d35e56"}
+        ],
+        "title": {
+            "text": "Total number of sales during 7 days: 420"
         },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Rainfall (mm)'
-            }
+        "subtitle": {
+            "text": "Data presented by sales channel"
         },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: 'Tokyo',
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-
-        }, {
-            name: 'New York',
-            data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
-
-        }, {
-            name: 'London',
-            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-
-        }, {
-            name: 'Berlin',
-            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
-
-        }]
+        "xAxis": {
+            "categories": [
+                "Thursday<br>25/02",
+                "Friday<br>26/02",
+                '<span style="color: #d35e56">Saturday</span><br><span style="color: #d35e56">27/02</span>',
+                '<span style="color: #d35e56">Sunday</span><br><span style="color: #d35e56">28/02</span>',
+                "Monday<br>29/02",
+                "Tuesday<br>1/03",
+                "Wednesday<br>2/03"]},
+        "yAxis": {
+            "min": 0,
+            "title": {
+                "text": "Number of sales"}}
     });
+
+    // Blue "#7293cb"
+    // Orange: "#e1974c"
+    // Green: "#84ba5b"
+    // Red "#d35e56"
+    // Grey "#808585"
 
     $('#second-slide-id').highcharts({
         chart: {
@@ -79,7 +64,10 @@ $( document ).ready(function() {
             type: 'pie'
         },
         title: {
-            text: 'Browser market shares January, 2015 to May, 2015'
+            text: 'Sales by category'
+        },
+        subtitle: {
+            text: ''
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -95,27 +83,27 @@ $( document ).ready(function() {
             }
         },
         series: [{
-            name: 'Brands',
+            name: 'Category',
             colorByPoint: true,
             data: [{
-                name: 'Microsoft Internet Explorer',
+                name: 'Stationary',
                 y: 56.33
             }, {
-                name: 'Chrome',
+                name: 'Pens',
                 y: 24.03,
                 sliced: true,
                 selected: true
             }, {
-                name: 'Firefox',
+                name: 'Printer paper',
                 y: 10.38
             }, {
-                name: 'Safari',
+                name: 'Ink',
                 y: 4.77
             }, {
-                name: 'Opera',
+                name: 'Crayons',
                 y: 0.91
             }, {
-                name: 'Proprietary or Undetectable',
+                name: 'Others',
                 y: 0.2
             }]
         }]
@@ -199,5 +187,3 @@ $( document ).ready(function() {
     });
 
 });
-
-
